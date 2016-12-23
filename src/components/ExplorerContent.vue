@@ -43,24 +43,19 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
 	export default {
 		name: 'up-explorer-content',
 
 		computed: {
-			username() {
-				return this.$store.state.username
-			},
-			repo() {
-				return this.$store.state.repo
-			},
+      ...mapGetters([
+        'username',
+        'repo',
+        'files',
+        'path'
+      ]),
 			fullRepoUrl() {
 				return this.username + '/' + this.repo
-			},
-			path() {
-				return this.$store.state.path
-			},
-			files() {
-				return this.$store.state.files
 			},
 			sortedFiles() {
       	return this.files.slice(0).sort((a, b) => {
@@ -75,12 +70,12 @@
 
 		methods: {
     	changePath(path) {
-    		this.$store.actions.changePath(path)
-    		this.$store.actions.getFiles(this.$http)
+        this.$store.dispatch('changePath', path)
+        this.$store.dispatch('getFiles', this.$http)
     	},
     	goBack() {
-      	this.$store.actions.goBack(this.path)
-      	this.$store.actions.getFiles(this.$http)
+        this.$store.dispatch('goBack', this.path)
+        this.$store.dispatch('getFiles', this.$http)
     	}
 		}
 	}

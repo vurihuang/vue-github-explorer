@@ -18,6 +18,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
 	export default {
 		name: 'up-explorer-header',
 
@@ -31,8 +32,8 @@
 			changeRepo() {
 				let username = this.repoName.split('/')[0]
 				let repo = this.repoName.split('/')[1]
-				this.$store.actions.changeRepo(username, repo)
-				this.$store.actions.getFiles(this.$http)
+				this.$store.dispatch('changeRepo', { username, repo })
+				this.$store.dispatch('getFiles', this.$http)
     	}
 		}
 	}

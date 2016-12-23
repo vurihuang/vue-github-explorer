@@ -14,18 +14,6 @@ class Store {
 		this._setupActions(actions)
 	}
 
-	/*
-	dispatch (type, ...payload) {
-		const action = this._actions[type]
-		const state = this.state
-		if (action) {
-			action(state, ...payload)
-		} else {
-			console.warn(`unknow action: ${ type }`)
-		}
-	}
-	*/
-
 	get state () {
 		return this._vm._data
 	}

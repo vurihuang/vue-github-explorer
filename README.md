@@ -1,10 +1,10 @@
 # Vue-github-explorer
 
- Vue github explorer
+A Vue github explorer demo modified from [https://github.com/scotch-io/vuejs-github-explorer](https://github.com/scotch-io/vuejs-github-explorer).
 
 ## Build Setup
 
-``` bash
+```bash
 
 # install dependencies
 npm install
@@ -16,4 +16,26 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## branch v1
+
+basic demo, only one page.
+
+```bash
+git checkout v1
+```
+
+## branch v2
+
+with components and a simple `state-management`
+
+```bash
+git checkout v2
+```
+
+## branch v3
+
+using vuex
+
+```bash
+git checkout v3
+```
